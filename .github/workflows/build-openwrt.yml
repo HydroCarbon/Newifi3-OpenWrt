@@ -11,6 +11,8 @@
 name: Build OpenWrt
 
 on:
+  schedule:
+    - cron:  '0 0 1 * *'
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -30,7 +32,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
